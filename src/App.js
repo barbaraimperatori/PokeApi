@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "./styles/styles.css";
+import Navbar from "./components/NavBar";
+import SearchBar from "./components/SearchBar";
 import PokemonList from "./components/PokemonList";
 import Pagination from "./components/Pagination";
 
@@ -22,7 +25,8 @@ function App() {
         setLoading(false);
         setNextURL(res.data.next);
         setPrevURL(res.data.previous);
-        setPokemon(res.data.results.map((p) => p.name));
+        console.log(res.data.results);
+        // setPokemon(res.data.results.map((p) => p.name));
       });
 
     //cancel the request when we make a new one
@@ -41,7 +45,11 @@ function App() {
 
   return (
     <>
-      <PokemonList pokemon={pokemon} />
+      <Navbar />
+      <div className="app">
+        <SearchBar />
+      </div>
+      {/* <PokemonList pokemon={pokemon} /> */}
       <Pagination
         nextPage={nextURL ? nextPage : null}
         prevPage={prevURL ? prevPage : null}
