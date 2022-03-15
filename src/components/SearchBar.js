@@ -23,15 +23,6 @@ export default function SearchBar() {
       <div className="search-bar-btn">
         <button onClick={handleOnClick}> Search </button>
       </div>
-      {/* <div>
-        {pokemon && (
-          <div>
-            <div> Name: {pokemon.name} </div>
-            <div> Weight: {pokemon.weight} </div>
-            <img alt="pokemon-img" src={pokemon.sprites.front_default} />
-          </div>
-        )}
-      </div> */}
     </div>
   );
 }
